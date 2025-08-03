@@ -1,6 +1,5 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaGithub,
@@ -12,8 +11,10 @@ import {
   FaFacebook,
   FaUserNurse,
 } from "react-icons/fa";
-import Navbar from "./components/Navbar";
 import { FaGraduationCap } from "react-icons/fa6";
+import Navbar from "./components/Navbar";
+import Image from "next/image"; // ✅ Added next/image import
+import { useEffect } from "react";
 
 export default function Home() {
   useEffect(() => {
@@ -23,7 +24,6 @@ export default function Home() {
   return (
     <main className="bg-gradient-to-br from-emerald-200 via-blue-100 to-emerald-400 text-gray-900">
       {/* Navbar */}
-
       <Navbar />
 
       {/* Home Section */}
@@ -37,7 +37,9 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-center max-w-xl"
         >
-          <h2 className="text-4xl font-bold mb-2">Hi, I'm Fathima Ijasa</h2>
+          <h2 className="text-4xl font-bold mb-2">
+            Hi, I&apos;m Fathima Ijasa
+          </h2>
           <p className="text-gray-600">Nursing Officer | undergraduate</p>
           <div className="flex justify-center space-x-4 mt-4 text-xl text-gray-700">
             <a
@@ -93,7 +95,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Projects Section */}
+      {/* Education Section */}
       <section
         id="education"
         className="flex items-center justify-center min-h-screen px-6 py-20"
@@ -113,7 +115,7 @@ export default function Home() {
                 <FaGraduationCap className="text-2xl text-emerald-700 drop-shadow-sm" />
               </div>
               <p className="text-gray-600">
-                External 5th Batch, Eastern university of Srilanka
+                External 5th Batch, Eastern University of Sri Lanka
               </p>
             </li>
 
@@ -140,20 +142,22 @@ export default function Home() {
           viewport={{ once: true }}
           className="flex flex-col md:flex-row max-w-4xl mx-auto gap-10"
         >
-          {/* Left: Photo - takes half width */}
+          {/* Left: Photo */}
           <div className="w-full md:w-1/2 flex justify-center items-center">
-            <img
+            <Image
               src="/images/profile.png"
               alt="My Photo"
+              width={320}
+              height={320}
               className="w-80 h-80 object-cover rounded-full border border-gray-300 shadow-2xl shadow-emerald-950"
             />
           </div>
 
-          {/* Right: Details - takes half width */}
+          {/* Right: Contact Info */}
           <div className="w-full md:w-1/2 flex flex-col justify-center space-y-6 text-gray-700 pl-20">
             <div>
               <h3 className="text-4xl font-semibold">Fathima Ijasa</h3>
-              <p className="text-sm">Nusring officer | Undergraduate</p>
+              <p className="text-sm">Nursing officer | Undergraduate</p>
             </div>
             <div className="text-lg space-y-2">
               <p className="flex items-center gap-2">
